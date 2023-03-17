@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="src/styles/index.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="./node_modules/sweetalert2/dist/sweetalert2.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="./node_modules/chartist/dist/index.css" type="text/css" media="all" />
+		<meta name="viewport" content="width=device-width"/>
+		<title>ToDo App</title>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Top Toolbar -->
+			<nav class="navbar toolbar">
+				<i class="bi bi-list menu-drawer"></i>
+				
+				<div class="toolbar-rightside">
+					<i class="bi bi-search search"></i>
+					<i class="bi bi-bookmarks"></i>
+				</div>
+			</nav>
+	
+			<!-- Search Field -->
+			<div class="layer search-bar" style="visibility: hidden;"><i class="bi bi-search"></i> <input type="text" class="search-field" placeholder="search something..."></div>
+	
+			<!-- Welcome Text -->
+			<br>
+			<span class="welcome">What's up, Joy!</span> <br> <br>
+			<br>
+	
+			<!-- Todos Categories -->
+			<span class="partmark">CATEGORIES</span> <br>
+			<div class="todos-cats">
+				<div class="layer todo-cat">
+					<span class="partmark todo-cat-tasks">40 tasks</span> <br>
+					<span class="todo-cat-name">Business</span> <br />
+					<div class="todo-cat-chart">
+						<div class="todo-cat-chart-fill" style="background: var(--pink); width: 60%; animation: progress 1500ms;"></div>
+					</div>
+				</div>
+				<div class="layer todo-cat">
+					<span class="partmark todo-cat-tasks">18 tasks</span> <br>
+					<span class="todo-cat-name">Personal</span> <br />
+					<div class="todo-cat-chart">
+						<div class="todo-cat-chart-fill" style="background: var(--blue); width: 40%; animation: progress 1500ms;"></div>
+					</div>
+				</div>
+			</div>
+	
+			<!-- Todos List -->
+			<br><br>
+			<span class="partmark">TODAY'S TASKS</span> <br>
+			<div class="todos">
+				<div class="todo"><div class="todo-state" style="border: 1.5px solid var(--blue);"></div>  <span class="todo-title">Daily meeting with team</span></div>
+				<div class="todo done"><div class="todo-state todo-done-state" style="border: 1.5px solid var(--blue); background: var(--blue)"><i class="bi bi-check"></i></div>  <span class="todo-title">Pay for rent</span></div>
+				<div class="todo"><div class="todo-state" style="border: 1.5px solid var(--pink);"></div>  <span class="todo-title">Check emails</span></div>
+				<div class="todo"><div class="todo-state" style="border: 1.5px solid var(--pink);"></div>  <span class="todo-title">Lunch with Emma</span></div>
+				<div class="todo"><div class="todo-state" style="border: 1.5px solid var(--pink);"></div>  <span class="todo-title">Meditation</span></div>
+			</div>
+			
+			<!-- Add Button -->
+			<button class="push"><i class="bi bi-plus"></i></button>
+		</div>
+
+		<!-- Sub Sessions -->
+		<!--    Menu -->
+		<div class="menu">
+			<div class="menu-head">
+				<!--  https://nody.parat.ir/files/2021/07/08/nody-%D8%B9%DA%A9%D8%B3-%DA%86%D9%87%D8%B1%D9%87-%D9%85%D8%B1%D8%AF%D8%A7%D9%86%D9%87-1625753543.jpg -->
+				<img src="https://honarfardi.com/wp-content/uploads/2019/02/word-image-287.jpeg" class="profile" alt="YOU">
+				<div class="menu-close"><i class="bi bi-chevron-left menu-drawer menu-close-inner"></i></div>
+				<span class="welcome menu-username">Joy<br>Mitchell</span>
+			</div>
+			<div class="menu-body">
+				<div class="menu-item"><i class="bi bi-bookmarks-fill menu-item-icon"></i> <span class="menu-item-name">Bookmarks</span></div>
+				<div class="menu-item"><i class="bi bi-grid-fill menu-item-icon"></i> <span class="menu-item-name">Categories</span></div>
+				<div class="menu-item"><i class="bi bi-pie-chart-fill menu-item-icon"></i> <span class="menu-item-name">Analytics</span></div>
+				<div class="menu-item"><i class="bi bi-gear-fill menu-item-icon"></i> <span class="menu-item-name">Settings</span></div>
+			</div>
+			<div class="menu-foot">
+				<div class="chart"></div>
+				<span class="chart-state">Good</span><br>
+				<span class="chart-word">Consistency</span>
+			</div>
+		</div>
+		<!--    Push Task -->
+		<div class="push-layer">
+			<div class="close-pushing"><i class="bi bi-x"></i></div>
+			<input type="text" placeholder="Enter new task" id="pushing_data">
+			<div class="pushing-date">
+				<div class="push-date pushing-today"><i class="bi bi-calendar"></i> Today</div>
+				<div class="push-date pushing-othertime"><div class="selected-option"></div></div>
+			</div>
+			<div class="pushing-options">
+				<i class="bi bi-folder-plus"></i>
+				<i class="bi bi-flag"></i>
+				<i class="bi bi-moon"></i>
+			</div>
+			<button class="push">New task <i class="bi bi-caret-up"></i></button>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="src/scripts/index.js" type="module" charset="utf-8"></script>
+	</body>
+</html>
